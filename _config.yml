@@ -24,7 +24,6 @@ title: Denis Coquenet's academic site
 page:
   title: Denis Coquenet's homepage
   description: Welcome to my site.
-  url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 
 author:
@@ -47,13 +46,13 @@ author:
 links:
 
   - title: Publications
-    url: /publications/
+    url: /publications
 
   - title: Communications
-    url: /communications/
+    url: /communications
 
   - title: Teaching
-    url: /teaching/
+    url: /teaching
 
 # Build settings
 plugins:
