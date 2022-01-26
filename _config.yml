@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 #url: http://localhost:4000
-url: https://factodeeplearning.github.io/
+url: https://factodeeplearning.github.io
 title: Denis Coquenet's academic site
 
 page:
