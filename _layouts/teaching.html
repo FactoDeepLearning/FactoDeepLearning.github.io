@@ -1,0 +1,71 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    {% include _head.html %}
+</head>
+
+<body class="page">
+    <style>
+    .biblist { }
+
+    .biblist li { }
+
+    div.noshow { display: none; }
+    div.bibtex {
+        margin-right: 0%;
+        margin-top: 1.2em;
+        margin-bottom: 1em;
+        border: 1px solid silver;
+        padding: 0em 1em;
+        background: #ffffee;
+    }
+    div.bibtex pre { font-size: 75%; overflow: auto;  width: 100%; padding: 0em 0em;}
+    </style>
+
+    <script type="text/javascript">
+    function toggleBibtex(articleid) {
+        var bib = document.getElementById('bib_'+articleid);
+        if (bib) {
+            if(bib.className.indexOf('bibtex') != -1) {
+                bib.className.indexOf('noshow') == -1?bib.className = 'bibtex noshow':bib.className = 'bibtex';
+            }
+        } else {
+            return;
+        }
+    }
+    </script>
+
+
+
+
+    {% include _navigation.html %}
+
+    <div id="main" role="main">
+        <div class="article-author-side">
+            {% include _author-bio.html %}
+        </div>
+        <article>
+            <h1>{{ page.title }}</h1>
+
+            <h3><a href="https://www.insa-rouen.fr/">INSA de Rouen</a></h3>
+            <ul class="biblist">
+                <li>
+                    2021-2022:<br/>
+                    <ul>
+                        <li>Deep Learning, ITI4 (graduate students)</li>
+                        <li>Initiation to imperative programming 1, STPI1 (undergraduate students)</li>
+                        <li>Initiation to imperative programming 2, STPI1 (undergraduate students)</li>
+                    </ul>
+                </li>
+                <li>
+                    2020-2021:<br/>
+                    <ul>
+                        <li>Advanced programming, ITI3 (graduate students)</li>
+                        <li>Web technologies 2, ITI4 (graduate students)</li>
+                    </ul>
+                </li>
+            </ul>
+
+
+        </article>
+    </div>
