@@ -56,7 +56,6 @@ links:
     url: /teaching/
 
 # Build settings
-theme: minimal-mistakes-jekyll
 plugins:
   - jekyll-feed
 
