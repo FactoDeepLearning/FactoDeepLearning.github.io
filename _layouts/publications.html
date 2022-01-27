@@ -5,38 +5,6 @@
 </head>
 
 <body class="page">
-    <style>
-        .underlined  {border-bottom: 2px dotted #b3b3b3;}
-        .biblist { }
-
-        .biblist li { }
-
-        div.noshow { display: none; }
-        div.bibtex {
-            margin-right: 0%;
-            margin-top: 1.2em;
-            margin-bottom: 1em;
-            border: 1px solid silver;
-            padding: 0em 1em;
-            background: #ffffee;
-        }
-        div.bibtex pre { font-size: 75%; overflow: auto;  width: 100%; padding: 0em 0em;}
-    </style>
-
-    <script type="text/javascript">
-        function toggleBibtex(articleid) {
-            var bib = document.getElementById('bib_'+articleid);
-            if (bib) {
-                if(bib.className.indexOf('bibtex') != -1) {
-                    bib.className.indexOf('noshow') == -1?bib.className = 'bibtex noshow':bib.className = 'bibtex';
-                }
-            } else {
-                return;
-            }
-        }
-    </script>
-
-
 
 
     {% include _navigation.html %}
@@ -56,7 +24,7 @@
         Denis Coquenet, Clément Chatelain, Thierry Paquet
         <br><b>End-to-end Handwritten Paragraph Text Recognition Using a Vertical
         Attention Network</b><br>
-        <i>Arxiv, accepted in IEEE TPAMI</i>, 2022.
+        <i>IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)</i>, 2022.
         <br />
         <a href="javascript:toggleBibtex('Coquenet2022')">[BibTeX]</a>
         <a href="https://arxiv.org/pdf/2012.03868.pdf" target="_blank">[Paper]</a>
@@ -64,20 +32,15 @@
     </p>
         <div id="bib_Coquenet2022" class="bibtex noshow">
     <pre>
-        @article{Coquenet2022,
-            author    = {Denis Coquenet and
-                Cl{\'{e}}ment Chatelain and
-                Thierry Paquet},
-                title     = {End-to-end Handwritten Paragraph Text Recognition Using a Vertical
-                    Attention Network},
-                    journal   = {CoRR},
-                    volume    = {abs/2012.03868},
-                    year      = {2020},
-                    eprinttype = {arXiv},
-                    eprint    = {2012.03868},
 
-                }
-            </pre>
+        @ARTICLE{Coquenet2022,
+            author={Coquenet, Denis and Chatelain, Clement and Paquet, Thierry},
+            journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
+            title={End-to-end Handwritten Paragraph Text Recognition Using a Vertical Attention Network},
+            year={2022},
+            doi={10.1109/TPAMI.2022.3144899}
+        }
+    </pre>
         </div>
     </li>
 </ul>
