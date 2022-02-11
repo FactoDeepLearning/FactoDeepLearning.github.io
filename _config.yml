@@ -17,14 +17,13 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
+
 #url: http://localhost:4000
 url: https://factodeeplearning.github.io
 title: Denis Coquenet's academic site
+description: Denis Coquenet academic site
 
-page:
-  title: Denis Coquenet's homepage
-  description: Welcome to my site.
-
+google-site-verification: D7Wgt8AG7Rfc5WGKiuFbaPU_-aVY_mNtbUDQmGcPFCY
 
 author:
   name: Denis Coquenet
@@ -44,6 +43,9 @@ author:
 # Links to include in top navigation
 # For external links add external: true
 links:
+
+  - title: Home
+    url: /index
 
   - title: Publications
     url: /publications
