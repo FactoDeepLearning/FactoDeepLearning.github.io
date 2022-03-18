@@ -1,0 +1,13 @@
+-   title: Accepted paper in IEEE TPAMI
+    paper_title: End-to-end Handwritten Paragraph Text Recognition Using a Vertical Attention Network
+    authors: [DenisCoquenet, ClementChatelain, ThierryPaquet]
+    name: IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)
+    keyname: journal
+    bibat: article
+    year: 2022
+    paper_link: https://arxiv.org/pdf/2012.03868.pdf
+    demo_link: https://youtu.be/OXi1birmbuw
+    code_link: https://github.com/FactoDeepLearning/VerticalAttentionOCR
+    doi: 10.1109/TPAMI.2022.3144899
+    bibkey: Coquenet2022
+    video: https://www.youtube.com/embed/OXi1birmbuw

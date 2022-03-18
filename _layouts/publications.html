@@ -6,7 +6,6 @@
 
 <body class="page">
 
-
     {% include _navigation.html %}
 
     <div id="main" role="main">
@@ -17,129 +16,72 @@
             <h1>{{ page.title }}</h1>
 
             <h4>You can also check my <a href="http://scholar.google.es/citations?user={{ site.author.google_scholar }}" class="underlined">Google scholar</a></h4>
-
-<h2>Journals</h2>
+{% for section in page.sections %}
+{% capture type %}{{ section.key }}{% endcapture %}
+{% assign list_papers = site.data.publications | where: "type", section.key %}
+{% if list_papers.size > 0 %}
+<h2>{{ section.title }}</h2>
 <ul class="biblist">
-    <li ><p>
-        Denis Coquenet, Clément Chatelain, Thierry Paquet
-        <br><b>End-to-end Handwritten Paragraph Text Recognition Using a Vertical
-        Attention Network</b><br>
-        <i>IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)</i>, 2022.
-        <br />
-        <a href="javascript:toggleBibtex('Coquenet2022')">[BibTeX]</a>
-        <a href="https://arxiv.org/pdf/2012.03868.pdf" target="_blank">[Paper]</a>
-        <a href="https://github.com/FactoDeepLearning/VerticalAttentionOCR" target="_blank">[Code]</a>
-        <a href="https://youtu.be/OXi1birmbuw" target="_blank">[Demo]</a>
-    </p>
-        <div id="bib_Coquenet2022" class="bibtex noshow">
-    <pre>
+    {% for paper in list_papers %}
+    <li><p>
+        {% assign limit = paper.authors.size | minus: 1%}
+        {% for i in (0..paper.authors.size) %}
+        {% assign authorkey = paper.authors[i] %}
+        {% assign author = site.data.authors[authorkey] %}
+        <a {% if author.me %}class="underlined"{% endif %} href="{{ author.url }}" target="_blank">{{ author.name }}</a>{% if i < limit %}, {% endif %}
+        {% endfor %}<br/>
 
-        @ARTICLE{Coquenet2022,
-            author={Coquenet, Denis and Chatelain, Clement and Paquet, Thierry},
-            journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
-            title={End-to-end Handwritten Paragraph Text Recognition Using a Vertical Attention Network},
-            year={2022},
-            doi={10.1109/TPAMI.2022.3144899}
-        }
-    </pre>
-        </div>
+        <b>{{ paper.paper_title }}</b><br/>
+        <i>{{ paper.name }}</i>, {{ paper.year }}.<br/>
+        <a class="tag_publi tag_bibtex" href="javascript:toggleBibtex('{{ paper.bibkey }}')">BibTeX</a>
+        {% if paper.paper_link %}<a class="tag_publi tag_paper" href="{{ paper.paper_link }}" target="_blank">Paper</a>{% endif %}
+
+        {% if paper.poster_link %}
+        {% assign firstLetter = paper.poster_link | slice: 0 %}
+        {% if firstLetter == "/" %}
+            <a class="tag_publi tag_poster" href="{{ site.url }}{{ paper.poster_link }}" target="_blank">Poster</a>
+            {% else %}
+            <a class="tag_publi tag_poster" href="{{ paper.poster_link }}" target="_blank">Poster</a>
+        {% endif %}{% endif %}
+
+        {% if paper.slides_link %}
+        {% assign firstLetter = paper.slides_link | slice: 0 %}
+        {% if firstLetter == "/" %}
+            <a class="tag_publi tag_slides" href="{{ site.url }}{{ paper.slides_link }}" target="_blank">Slides</a>
+            {% else %}
+            <a class="tag_publi tag_slides" href="{{ paper.slides_link }}" target="_blank">Slides</a>
+        {% endif %}{% endif %}
+
+        {% if paper.code_link %}<a class="tag_publi tag_code" href="{{ paper.code_link }}" target="_blank">Code</a>{% endif %}
+        {% if paper.demo_link %}<a class="tag_publi tag_demo" href="{{ paper.demo_link }}" target="_blank">Demo</a>{% endif %}
+    </p>
+    <div id="bib_{{ paper.bibkey }}" class="bibtex noshow">
+<div>
+@{{ paper.bibat }}{% raw %}{{% endraw %}{{ paper.bibkey }},<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;author={
+    {% assign limit = paper.authors.size | minus: 1%}
+    {% for i in (0..paper.authors.size) %}
+    {% assign authorkey = paper.authors[i] %}
+    {% assign author = site.data.authors[authorkey] %}
+    {{ author.name }}{% if i < limit %} and {% endif %}
+    {% endfor %}
+    }<br/>
+
+    {% if paper.name %}&nbsp;&nbsp;&nbsp;&nbsp;{{ paper.keyname }}={% raw %}{{% endraw %}{{ paper.name }}{% raw %}}{% endraw %},<br>{% endif %}
+    {% if paper.paper_title %}&nbsp;&nbsp;&nbsp;&nbsp;title={% raw %}{{% endraw %}{{ paper.paper_title }}{% raw %}}{% endraw %},<br>{% endif %}
+    {% if paper.year %}&nbsp;&nbsp;&nbsp;&nbsp;year={% raw %}{{% endraw %}{{ paper.year }}{% raw %}}{% endraw %},<br>{% endif %}
+    {% if paper.pages %}&nbsp;&nbsp;&nbsp;&nbsp;pages={% raw %}{{% endraw %}{{ paper.pages }}{% raw %}}{% endraw %},<br>{% endif %}
+    {% if paper.series %}&nbsp;&nbsp;&nbsp;&nbsp;series={% raw %}{{% endraw %}{{ paper.series }}{% raw %}}{% endraw %},<br>{% endif %}
+    {% if paper.volume %}&nbsp;&nbsp;&nbsp;&nbsp;volume={% raw %}{{% endraw %}{{ paper.volume }}{% raw %}}{% endraw %},<br>{% endif %}
+    {% if paper.doi %}&nbsp;&nbsp;&nbsp;&nbsp;doi={% raw %}{{% endraw %}{{ paper.doi }}{% raw %}}{% endraw %},<br/>{% endif %}
+    }
+</div>
+    </div>
     </li>
+    {% endfor %}
 </ul>
-
-<h2>International Conferences</h2>
-<ul class="biblist">
-
-    <li ><p>
-        Denis Coquenet, Clément Chatelain, Thierry Paquet
-        <br><b>SPAN: a Simple Predict & Align Network for Handwritten Paragraph Recognition</b><br>
-        <i>International Conference on Document Analysis and Recognition, (ICDAR)</i>, vol. 12823, pp. 70-84, 2021.
-        <br />
-        <a href="javascript:toggleBibtex('Coquenet2021')">[BibTeX]</a>
-        <a href="https://arxiv.org/pdf/2102.08742.pdf" target="_blank">[Paper]</a>
-        <a href="https://github.com/FactoDeepLearning/SPAN" target="_blank">[Code]</a>
-        <a href="{{ site.url }}/communications/2021-09-09 ICDAR Poster.pdf" target="_blank">[Poster]</a>
-
-    </p>
-    <div id="bib_Coquenet2021" class="bibtex noshow">
-        <pre>
-            @inproceedings{Coquenet2021,
-                author    = {Denis Coquenet and
-                    Cl{\'{e}}ment Chatelain and
-                    Thierry Paquet},
-                    title     = {SPAN: {A} Simple Predict {\&} Align Network for Handwritten
-                    Paragraph Recognition},
-                    booktitle = {16th International Conference on Document Analysis and Recognition,
-                        {ICDAR}},
-                        series    = {Lecture Notes in Computer Science},
-                        volume    = {12823},
-                        pages     = {70--84},
-                        year      = {2021},
-                        doi       = {10.1007/978-3-030-86334-0\_5},
-
-                    }
-                </pre>
-            </div>
-        </li>
-
-
-        <li ><p>
-            Denis Coquenet, Clément Chatelain, Thierry Paquet
-            <br><b>Recurrence-free unconstrained handwritten text recognition using gated fully convolutional network</b><br>
-            <i>17th International Conference on Frontiers in Handwriting Recognition (ICFHR)</i>, pp. 19-24, 2020.
-            <br />
-            <a href="javascript:toggleBibtex('Coquenet2020')">[BibTeX]</a>
-            <a href="https://arxiv.org/pdf/2012.04961.pdf" target="_blank">[Paper]</a>
-            <a href="https://github.com/FactoDeepLearning/LinePytorchOCR" target="_blank">[Code]</a>
-            <a href="{{ site.url }}/communications/2020-09-08 ICFHR Slides.pdf" target="_blank">[Slides]</a>
-        </p>
-        <div id="bib_Coquenet2020" class="bibtex noshow">
-            <pre>
-                @inproceedings{Coquenet2020,
-                    author    = {Denis Coquenet and
-                        Cl{\'{e}}ment Chatelain and
-                        Thierry Paquet},
-                        title     = {Recurrence-free unconstrained handwritten text recognition using gated
-                            fully convolutional network},
-                            booktitle = {17th International Conference on Frontiers in Handwriting Recognition,
-                                {ICFHR}},
-                                pages     = {19--24},
-                                year      = {2020},
-                                doi       = {10.1109/ICFHR2020.2020.00015},
-                            }
-                        </pre>
-                    </div>
-                </li>
-
-                <li ><p>
-                    Denis Coquenet, Yann Soullard, Clément Chatelain, Thierry Paquet
-                    <br><b>Have convolutions already made recurrence obsolete for unconstrained handwritten text recognition ?</b><br>
-                    <i>International Conference on Document Analysis and Recognition Workshops (ICDARW)</i>, vol. 5, pp. 65-70, 2019.
-                    <br />
-                    <a href="javascript:toggleBibtex('Coquenet2019')">[BibTeX]</a>
-                    <a href="https://arxiv.org/pdf/2012.04954.pdf" target="_blank">[Paper]</a>
-                    <a href="{{ site.url }}/communications/2019-09-21 ICDAR Slides.pdf" target="_blank">[Slides]</a>
-
-                </p>
-                <div id="bib_Coquenet2019" class="bibtex noshow">
-                    <pre>
-                        @inproceedings{Coquenet2019,
-                            author    = {Denis Coquenet and
-                                Yann Soullard and
-                                Cl{\'{e}}ment Chatelain and
-                                Thierry Paquet},
-                                title     = {Have Convolutions Already Made Recurrence Obsolete for Unconstrained
-                                    Handwritten Text Recognition?},
-                                    booktitle = {Second International Workshop on Machine Learning, WML@ICDAR 2019},
-                                    pages     = {65--70},
-                                    year      = {2019},
-                                    doi       = {10.1109/ICDARW.2019.40083},
-                                }
-                            </pre>
-                        </div>
-                    </li>
-
-</ul>
-
-
-                                </article>
-                            </div>
+{% endif %}
+{% endfor %}
+    </article>
+</div>
+</body>

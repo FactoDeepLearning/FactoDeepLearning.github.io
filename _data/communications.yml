@@ -1,0 +1,45 @@
+-   title: End-to-end Handwritten Paragraph Text Recognition Using a Vertical Attention Network
+    authors: [DenisCoquenet, ClementChatelain, ThierryPaquet]
+    events:
+        -   name: Symposium International Francophone sur l'Ecrit et le Document (SIFED)
+            year: 2021
+    slides_link: /communications/2021-12-10 SIFED.pdf
+    type: international
+-   title: Recurrence-free unconstrained handwritten text recognition using gated fully convolutional network
+    authors: [DenisCoquenet, ClementChatelain, ThierryPaquet]
+    events:
+        -   name: 4th Data Science Summer School (DS3)
+            year: 2021
+        -   name: Symposium International Francophone sur l'Ecrit et le Document (SIFED)
+            year: 2020
+    slides_link: /communications/2020-07-06 SIFED.pdf
+    poster_link: https://www.ds3-datascience-polytechnique.fr/wp-content/uploads/2021/01/02.pdf"
+    type: international
+-   title: Importance of recurrent layers for unconstrained handwriting recognition
+    authors: [DenisCoquenet, YannSoullard, ClementChatelain, ThierryPaquet]
+    events:
+        -   name: Symposium International Francophone sur l'Ecrit et le Document (SIFED)
+            year: 2019
+    slides_link: https://grce.labri.fr/sifed2019/prez/3.pdf
+    type: international
+-   title: End-to-end Handwritten Paragraph Text Recognition Using a Vertical Attention Network
+    authors: [DenisCoquenet, ClementChatelain, ThierryPaquet]
+    events:
+        -   name: Journée scientifique organisé par Normastic, Normaths, pôle SN et la graduate school MinMacs
+            year: 2022
+    poster_link: /communications/2022-02-25 Journee Scientifique.pdf
+    type: french
+-   title: 'Intelligence artificielle : quand la machine apprend à lire'
+    authors: [DenisCoquenet, ClementChatelain, ThierryPaquet]
+    events:
+        -   name: Fête de la Science, UFR Sciences et Techniques de Rouen
+            year: 2021
+    slides_link: /communications/2021-10-07 Fete_de_la_Science.pdf
+    type: french
+-   title: 'Handwritten text recognition: from isolated text lines to whole documents'
+    authors: [DenisCoquenet, ClementChatelain, ThierryPaquet]
+    events:
+        -   name: Journées francophones des jeunes chercheurs en vision par ordinateur (ORASIS)
+            year: 2021
+    type: french
+    slides_link: /communications/2021-09-14 ORASIS_Slides.pdf

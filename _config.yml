@@ -21,13 +21,23 @@
 #url: http://localhost:4000
 url: https://factodeeplearning.github.io
 title: Denis Coquenet's academic site
+tag: [Denis Coquenet, FactoDeepLearning, Page Perso, Academic site, Rouen, France, INSA, LITIS, Deep Learning, Computer Vision]
 
-description: Denis Coquenet academic site (page perso)
+description: Denis Coquenet academic site (personal website)
+keytags: [OCR, HTR, Document Analysis, Transformer, Computer Vision, Seq2seq, Attention models]
 
 google-site-verification: D7Wgt8AG7Rfc5WGKiuFbaPU_-aVY_mNtbUDQmGcPFCY
 
 author:
   name: Denis Coquenet
+  affiliations:
+    - name: LITIS
+      url: https://www.litislab.fr/
+    - name: Normandie Universite
+      url: https://www.normandie-univ.fr/
+    - name: Universite Rouen
+      url: https://www.univ-rouen.fr/
+
   avatar: profil.jpg
   email: denis.coquenet@litislab.eu
   github: FactoDeepLearning
@@ -44,7 +54,6 @@ author:
 # Links to include in top navigation
 # For external links add external: true
 links:
-
   - title: Home
     url: /index
 
@@ -56,6 +65,9 @@ links:
 
   - title: Teaching
     url: /teaching
+
+  - title: CV
+    url: /cv
 
 # Build settings
 plugins:

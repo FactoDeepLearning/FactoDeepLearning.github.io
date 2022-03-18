@@ -1,7 +1,7 @@
 <meta charset="utf-8">
-<title>{{ site.title }}</title>
+<title>{{ site.title }} {% if page.title %} - {{ page.title }} {% endif %}</title>
 <meta name="description" content="{{ site.description }}">
-<meta name="keywords" content="{{ site.tags }}">
+<meta name="keywords" content="{{ site.tag  | join: ', ' }}{% if page.tag %}, {{ page.tag  | join: ', ' }}{% endif %}">
 
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
@@ -30,6 +30,10 @@
 <link rel="apple-touch-icon-precomposed" sizes="192x192" href="{{ site.url }}/images/apple-icon-precomposed.png">
 
     <style>
+        .navigation-wrapper {
+            background: white;
+            box-shadow: 0px 0px 0px black;
+        }
         .underlined  {border-bottom: 2px dotted #b3b3b3;}
         .biblist { }
 
@@ -37,14 +41,15 @@
 
         div.noshow { display: none; }
         div.bibtex {
-            margin-right: 0%;
+            margin-right: 0;
+            margin-left: 0;
             margin-top: 1.2em;
             margin-bottom: 1em;
             border: 1px solid silver;
             padding: 0em 1em;
             background: #ffffee;
         }
-        div.bibtex pre { font-size: 75%; overflow: auto;  width: 100%; padding: 0em 0em;}
+        div.bibtex div { font-size: 75%; overflow: auto;  width:100%; padding: 0em 0em;}
 
         .responsive-iframe {
           position: absolute;
@@ -60,8 +65,108 @@
           position: relative;
           overflow: hidden;
           width: 100%;
-          padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+          padding-top: 56.25%;
         }
+
+         .tag {
+          background-color: #4CAF50; /* Green */
+          border: none;
+          color: white;
+          padding: 5px 25px;
+          margin: 10px 10px 5px 5px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 14px;
+          font-weight: bold;
+          border-radius: 10px;
+          box-shadow: 5px 5px 5px black;
+        }
+
+        .tag_publi {
+          border: none;
+          color: white;
+          padding: 3px 10px;
+          margin: 10px 10px 0px 0px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 14px;
+          font-weight: bold;
+          border-radius: 10px;
+          box-shadow: 2px 2px 2px black;
+          color: #424949;
+        }
+
+        .tag_bibtex{
+            background-color: #F2D7D5;
+        }
+        .tag_paper{
+            background-color: #D4E6F1;
+        }
+        .tag_poster{
+            background-color: #D1F2EB;
+        }
+        .tag_slides{
+            background-color: #FCF3CF;
+        }
+        .tag_demo{
+            background-color: #E8DAEF;
+        }
+        .tag_code{
+            background-color: #DAF7A6;
+        }
+
+         .announce {
+          background-color: #4997D0;
+          border: none;
+          color: white;
+          padding: 5px 25px;
+          margin: 10px 10px 5px 5px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          font-weight: bold;
+          border-radius: 10px;
+          box-shadow: 5px 5px 5px black;
+          width: 100%;
+        }
+
+        .tag_container{
+            justify-content: center;
+            flex-wrap: wrap;
+            display: flex;
+        }
+
+        .logo_container{
+            justify-content: center;
+            flex-wrap: wrap;
+            display: flex;
+        }
+
+        .logo{
+            width: 15%;
+            max-height: 20px;
+            margin: 15px 15px 10px 5px;
+            justify-content: center;
+        }
+
+
+        .tag_link:link{
+            color: white;
+        }
+        .tag_link:visited {
+          color: white;
+        }
+        .tag_link:hover{
+            color: black;
+        }
+        .tag_link:active{
+            color: white;
+        }
+
+
     </style>
 
     <script type="text/javascript">
@@ -70,9 +175,11 @@
             if (bib) {
                 if(bib.className.indexOf('bibtex') != -1) {
                     bib.className.indexOf('noshow') == -1?bib.className = 'bibtex noshow':bib.className = 'bibtex';
+<!--                    navigator.clipboard.writeText(bib.getElementsByTagName('div')[0].innerHTML);-->
                 }
             } else {
                 return;
             }
         }
+
     </script>

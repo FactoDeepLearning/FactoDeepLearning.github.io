@@ -5,38 +5,6 @@
 </head>
 
 <body class="page">
-    <style>
-    .biblist { }
-
-    .biblist li { }
-
-    div.noshow { display: none; }
-    div.bibtex {
-        margin-right: 0%;
-        margin-top: 1.2em;
-        margin-bottom: 1em;
-        border: 1px solid silver;
-        padding: 0em 1em;
-        background: #ffffee;
-    }
-    div.bibtex pre { font-size: 75%; overflow: auto;  width: 100%; padding: 0em 0em;}
-    </style>
-
-    <script type="text/javascript">
-    function toggleBibtex(articleid) {
-        var bib = document.getElementById('bib_'+articleid);
-        if (bib) {
-            if(bib.className.indexOf('bibtex') != -1) {
-                bib.className.indexOf('noshow') == -1?bib.className = 'bibtex noshow':bib.className = 'bibtex';
-            }
-        } else {
-            return;
-        }
-    }
-    </script>
-
-
-
 
     {% include _navigation.html %}
 
@@ -47,25 +15,30 @@
         <article>
             <h1>{{ page.title }}</h1>
 
-            <h3><a href="https://www.insa-rouen.fr/">INSA de Rouen</a></h3>
             <ul class="biblist">
+                {% for event in site.data.teaching %}
                 <li>
-                    2021-2022:<br/>
+                {% assign place = event.place %}
+                {{ event.year }}: {{ event.name }} - <a href="{{ site.data.places[place].url }}" target="_blank">{{ site.data.places[place].name }}</a>
                     <ul>
-                        <li>Deep Learning, ITI4 (graduate students)</li>
-                        <li>Initiation to imperative programming 1, STPI1 (undergraduate students)</li>
-                        <li>Initiation to imperative programming 2, STPI1 (undergraduate students)</li>
+                        {% for class in event.classes %}
+                        <li>
+                        {{ class.name }} - {{ class.level }} - {{ class.quantity }}<br/>
+                        {% if class.with %}
+                        With: {% assign limit = class.with.size | minus: 1%}
+                        {% for i in (0..class.with.size) %}
+                        {% assign authorkey = class.with[i] %}
+                        {% assign author = site.data.authors[authorkey] %}
+                        <a {% if author.me %}class="underlined"{% endif %} href="{{ author.url }}" target="_blank">{{ author.name }}</a>{% if i < limit %}, {% endif %}
+                        {% endfor %}
+                        {% endif %}
+                        </li>
+                        {% endfor %}
                     </ul>
                 </li>
-                <li>
-                    2020-2021:<br/>
-                    <ul>
-                        <li>Advanced programming, ITI3 (graduate students)</li>
-                        <li>Web technologies 2, ITI4 (graduate students)</li>
-                    </ul>
-                </li>
+                {% endfor %}
             </ul>
-
-
+            <div class="logo" style="width:25%;"><a href="https://www.insa-rouen.fr/"><img src="{{ site.url }}/images/logo-INSA Rouen.png"  alt="INSA de Rouen"></a></div>
         </article>
     </div>
+</body>

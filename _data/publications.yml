@@ -1,0 +1,52 @@
+-   paper_title: End-to-end Handwritten Paragraph Text Recognition Using a Vertical Attention Network
+    name: IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)
+    keyname: journal
+    bibat: article
+    authors: [DenisCoquenet, ClementChatelain, ThierryPaquet]
+    paper_link: https://arxiv.org/pdf/2012.03868.pdf
+    demo_link: https://youtu.be/OXi1birmbuw
+    code_link: https://github.com/FactoDeepLearning/VerticalAttentionOCR
+    year: 2022
+    doi: 10.1109/TPAMI.2022.3144899
+    bibkey: Coquenet2022
+    type: journal
+-   paper_title: 'SPAN: a Simple Predict & Align Network for Handwritten Paragraph Recognition'
+    authors: [DenisCoquenet, ClementChatelain, ThierryPaquet]
+    name: International Conference on Document Analysis and Recognition, (ICDAR)
+    keyname: booktitle
+    bibat: inproceedings
+    paper_link: https://arxiv.org/pdf/2102.08742.pdf
+    code_link: https://github.com/FactoDeepLearning/SPAN
+    poster_link: /communications/2021-09-09 ICDAR Poster.pdf
+    year: 2021
+    doi: 10.1007/978-3-030-86334-0\_5
+    pages: 70--84
+    volume: 12823
+    series: Lecture Notes in Computer Science
+    bibkey: Coquenet2021
+    type: conference
+-   paper_title: Recurrence-free unconstrained handwritten text recognition using gated fully convolutional network
+    authors: [DenisCoquenet, ClementChatelain, ThierryPaquet]
+    name: 17th International Conference on Frontiers in Handwriting Recognition (ICFHR)
+    keyname: booktitle
+    bibat: inproceedings
+    paper_link: https://arxiv.org/pdf/2012.04961.pdf
+    code_link: https://github.com/FactoDeepLearning/LinePytorchOCR
+    slides_link: /communications/2020-09-08 ICFHR Slides.pdf
+    year: 2020
+    doi: 10.1109/ICFHR2020.2020.00015
+    pages: 19--24
+    bibkey: Coquenet2020
+    type: conference
+-   paper_title: Have convolutions already made recurrence obsolete for unconstrained handwritten text recognition ?
+    authors: [DenisCoquenet, YannSoullard, ClementChatelain, ThierryPaquet]
+    name: International Conference on Document Analysis and Recognition Workshops (ICDARW)
+    keyname: booktitle
+    bibat: inproceedings
+    paper_link: https://arxiv.org/pdf/2012.04954.pdf
+    slides_link: /communications/2019-09-21 ICDAR Slides.pdf
+    year: 2019
+    doi: 10.1109/ICDARW.2019.40083
+    pages: 65--70
+    bibkey: Coquenet2019
+    type: conference

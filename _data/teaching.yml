@@ -1,0 +1,28 @@
+-   place: INSARouen
+    year: 2021-2022
+    name: Teaching mission (64h)
+    classes:
+        -   name: Deep Learning
+            level: ITI4 (graduate students)
+            quantity: 31h
+            with: [ClementChatelain, RomainHerault]
+        -   name: Initiation to imperative programming 1
+            level: STPI1 (undergraduate students)
+            quantity: 12h
+            with: [JulienSaunier]
+        -   name: Initiation to imperative programming 2
+            level: STPI1 (undergraduate students)
+            quantity: 21h
+            with: [JulienSaunier]
+-   place: INSARouen
+    year: 2020-2021
+    name: Teaching mission (64h)
+    classes:
+        -   name: Advanced programming
+            level: ITI3 (graduate students)
+            quantity: 45h
+            with: [NicolasMalandain, GeraldineDelMondo]
+        -   name: Web technologies 2
+            level: ITI 4 (graduate students)
+            quantity: 18h
+            with: [MaximeGueriau]

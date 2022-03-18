@@ -16,78 +16,51 @@
         <article>
             <h1>{{ page.title }}</h1>
 
-            <h2>International Communications</h2>
+{% for section in page.sections %}
+{% capture type %}{{ section.key }}{% endcapture %}
+{% assign list_communications = site.data.communications | where: "type", section.key %}
+{% if list_communications.size > 0 %}
+<h2>{{ section.title }}</h2>
+<ul class="biblist">
+    {% for communication in list_communications %}
+    <li><p>
+        {% assign limit = communication.authors.size | minus: 1 %}
+        {% for i in (0..communication.authors.size) %}
+        {% assign authorkey = communication.authors[i] %}
+        {% assign author = site.data.authors[authorkey] %}
+        <a {% if author.me %}class="underlined"{% endif %} href="{{ author.url }}" target="_blank">{{ author.name }}</a>{% if i < limit %}, {% endif %}
+        {% endfor %}<br/>
 
-            <ul class="biblist">
+        <b>{{ communication.title }}</b><br/>
+        {% for event in communication.events %}
+        <i>{{ event.name }}</i>, {{ event.year }}.<br/>
+        {% endfor %}
+        {% if communication.paper_link %}<a class="tag_publi tag_paper" href="{{ communication.paper_link }}" target="_blank">[Paper]</a>{% endif %}
 
-                <li ><p>
-                    Denis Coquenet, Clément Chatelain, Thierry Paquet
-                    <br><b>End-to-end Handwritten Paragraph Text Recognition Using a Vertical Attention Network</b><br>
-                    <i>Symposium International Francophone sur l'Ecrit et le Document (SIFED)</i>, 2021.
-                    <br />
-                    <a href="{{ site.url }}/communications/2021-12-10 SIFED.pdf" target="_blank">[Slides]</a>
-                </p>
+        {% if communication.slides_link %}
+        {% assign firstLetter = communication.slides_link | slice: 0 %}
+            {% if firstLetter == "/" %}
+            <a class="tag_publi tag_slides" href="{{ site.url }}{{ communication.slides_link }}" target="_blank">Slides</a>
+            {% else %}
+            <a class="tag_publi tag_slides" href="{{ communication.slides_link }}" target="_blank">Slides</a>
+        {% endif %}{% endif %}
 
-            </li>
-
-
-            <li ><p>
-                Denis Coquenet, Clément Chatelain, Thierry Paquet
-                <br><b>Recurrence-free unconstrained handwritten text recognition using gated fully convolutional network</b><br>
-                <i>4th Data Science Summer School (DS3)</i>, 2021.<br />
-                <i>Symposium International Francophone sur l'Ecrit et le Document (SIFED)</i>, 2020.
-                <br />
-                <a href="https://www.ds3-datascience-polytechnique.fr/wp-content/uploads/2021/01/02.pdf" target="_blank">[Poster]</a>
-                <a href="{{ site.url }}/communications/2020-07-06 SIFED.pdf" target="_blank">[Slides]</a></p>
-
-            </li>
-
-
-            <li ><p>
-                Denis Coquenet, Yann Soullard, Clément Chatelain, Thierry Paquet
-                <br><b>Importance of recurrent layers for unconstrained handwriting recognition</b><br>
-                <i>Symposium International Francophone sur l'Ecrit et le Document (SIFED)</i>, 2019.
-                <br />
-                <a href="https://grce.labri.fr/sifed2019/prez/3.pdf" target="_blank">[Slides]</a>
-            </p>
-        </li>
-
-    </ul>
-
-    <h2>French Communications</h2>
-    <ul>
-        <li >
-            <p>
-            Denis Coquenet, Clément Chatelain, Thierry Paquet
-            <br><b>End-to-end Handwritten Paragraph Text Recognition Using a Vertical Attention Network</b><br>
-            <i>Journée scientifique organisé par Normastic, Normaths, pôle SN et la graduate school MinMacs</i>, 2022.
-            <br />
-            <a href="{{ site.url }}/communications/2022-02-25 Journee Scientifique.pdf" target="_blank">[Poster]</a>
-            </p>
-        </li>
-
-        <li >
-            <p>
-            Denis Coquenet, Clément Chatelain, Thierry Paquet
-            <br><b>Intelligence artificielle : quand la machine apprend à lire</b><br>
-            <i>Fête de la Science, UFR Sciences et Techniques de Rouen</i>, 2021.
-            <br />
-            <a href="{{ site.url }}/communications/2021-10-07 Fete_de_la_Science.pdf" target="_blank">[Slides]</a>
-            </p>
-        </li>
-
-        <li >
-            <p>
-            Denis Coquenet, Clément Chatelain, Thierry Paquet
-            <br><b> Handwritten text recognition: from isolated text lines to whole documents</b><br>
-            <i>Journées francophones des jeunes chercheurs en vision par ordinateur (ORASIS)</i>, 2021.
-            <br />
-            </p>
-        </li>
-
+        {% if communication.poster_link %}
+        {% assign firstLetter = communication.slides_link | slice: 0 %}
+            {% if firstLetter == "/" %}
+            <a class="tag_publi tag_poster" href="{{ site.url }}{{ communication.poster_link }}" target="_blank">Poster</a>
+            {% else %}
+            <a class="tag_publi tag_poster" href="{{ communication.poster_link }}" target="_blank">Poster</a>
+        {% endif %}{% endif %}
+        {% if communication.code_link %}<a class="tag_publi tag_code" href="{{ communication.code_link }}" target="_blank">Code</a>{% endif %}
+        {% if communication.demo_link %}<a class="tag_publi tag_demo" href="{{ communication.demo_link }}" target="_blank">Demo</a>{% endif %}
+    </p>
+    </li>
+    {% endfor %}
 </ul>
-
-
+{% endif %}
+{% endfor %}
 
 </article>
 </div>
+</body>
