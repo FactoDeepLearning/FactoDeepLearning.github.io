@@ -65,7 +65,7 @@
     {% assign author = site.data.authors[authorkey] %}
     {{ author.name }}{% if i < limit %} and {% endif %}
     {% endfor %}
-    }<br/>
+    },<br/>
 
     {% if paper.name %}&nbsp;&nbsp;&nbsp;&nbsp;{{ paper.keyname }}={% raw %}{{% endraw %}{{ paper.name }}{% raw %}}{% endraw %},<br>{% endif %}
     {% if paper.paper_title %}&nbsp;&nbsp;&nbsp;&nbsp;title={% raw %}{{% endraw %}{{ paper.paper_title }}{% raw %}}{% endraw %},<br>{% endif %}

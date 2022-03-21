@@ -46,7 +46,7 @@
         {% endif %}{% endif %}
 
         {% if communication.poster_link %}
-        {% assign firstLetter = communication.slides_link | slice: 0 %}
+        {% assign firstLetter = communication.poster_link | slice: 0 %}
             {% if firstLetter == "/" %}
             <a class="tag_publi tag_poster" href="{{ site.url }}{{ communication.poster_link }}" target="_blank">Poster</a>
             {% else %}

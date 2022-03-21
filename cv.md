@@ -4,5 +4,6 @@
 
 layout: cv
 title: Curriculum vitæ
+description: CV of Denis Coquenet
 tags: [CV, Curriculum Vitae]
 ---
