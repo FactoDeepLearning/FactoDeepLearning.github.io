@@ -1,0 +1,18 @@
+<center>
+<span>&copy; {{ site.yearstart }} - {{site.time | date: '%Y'}}. {{ site.author.name }}.   &nbsp;
+
+  {% if site.author.google_scholar %}<a style="display: inline;" href="http://scholar.google.com/citations?user={{ site.owner.google_scholar }}" class="author-social" target="_blank"><i class="ai ai-google-scholar-square"></i>&nbsp; G. Scholar</a>  &nbsp;{% endif %}
+
+  {% if site.author.linkedin %}<a style="display: inline;" href="https://linkedin.com/in/{{ site.owner.linkedin }}" class="author-social" target="_blank"><i class="fa fa-linkedin-square"></i> LinkedIn</a>  &nbsp;{% endif %}
+
+  {% if site.author.github %}<a style="display: inline;" href="http://github.com/{{ site.owner.github }}" class="author-social" target="_blank"><i class="fa fa-github-square"></i> Github</a>   &nbsp;{% endif %}
+
+  {% if site.author.email %}<a style="display: inline;" href="mailto:{{ site.owner.email }}" class="author-social" target="_blank"><i class="fa fa-envelope-square"></i> e-Mail</a>  &nbsp;{% endif %}
+
+<br/>
+<font size="1">
+Powered by <a href="http://jekyllrb.com"><font size="1">Jekyll</font></a> using the <a href="http://mademistakes.com/minimal-mistakes/"><font size="1">Minimal Mistakes</font></a> theme.
+</font>
+
+</span>
+</center>
