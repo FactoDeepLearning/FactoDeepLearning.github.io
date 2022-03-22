@@ -1,28 +1,30 @@
-<img src="{{ site.url }}/images/{{ site.author.avatar }}" class="bio-photo" alt="{{ site.author.name }} bio photo">
-<h3>{{ site.author.name }}</h3>
-<h4>Ph.D Student</h4>
-Research topics:
-<p>
-    <ul>
-        {% for topic in site.author.topics %}
-		<li >{{ topic }}</li>
-        {% endfor %}
-    </ul>
-</p>
+<div style="margin-left: 2em;">
+    <img src="{{ site.url }}/images/{{ site.author.avatar }}" class="bio-photo" alt="{{ site.author.name }} bio photo">
+    <h3>{{ site.author.name }}</h3>
+    <h4>Ph.D Student</h4>
+    Research topics:
+    <p>
+        <ul>
+            {% for topic in site.author.topics %}
+            <li >{{ topic }}</li>
+            {% endfor %}
+        </ul>
+    </p>
 
-<a href="http://scholar.google.es/citations?user={{ site.author.google_scholar }}"
-    class="author-social" target="_blank"><i class="ai ai-google-scholar-square"></i>&nbsp; Google Scholar</a>
+    <a href="http://scholar.google.es/citations?user={{ site.author.google_scholar }}"
+        class="author-social" target="_blank"><i class="ai ai-google-scholar-square"></i>&nbsp; Google Scholar</a>
 
-<a href="http://linkedin.com/in/{{ site.author.linkedin }}"
-    class="author-social" target="_blank"><i class="fa fa-linkedin-square"></i> LinkedIn</a>
+    <a href="http://linkedin.com/in/{{ site.author.linkedin }}"
+        class="author-social" target="_blank"><i class="fa fa-linkedin-square"></i> LinkedIn</a>
 
 
-<a href="http://github.com/{{ site.author.github }}" class="author-social" target="_blank"><i class="fa fa-github-square"></i> Github</a>
+    <a href="http://github.com/{{ site.author.github }}" class="author-social" target="_blank"><i class="fa fa-github-square"></i> Github</a>
 
-<a href="https://orcid.org/{{ site.author.orcid }}" class="author-social" target="_blank"><i class="ai ai-orcid-square"></i> ORC ID</a>
+    <a href="https://orcid.org/{{ site.author.orcid }}" class="author-social" target="_blank"><i class="ai ai-orcid-square"></i> ORC ID</a>
 
-<a href="https://researchgate.net/profile/{{ site.author.research_gate }}" class="author-social" target="_blank"><i class="ai ai-researchgate-square"></i> Research Gate</a>
+    <a href="https://researchgate.net/profile/{{ site.author.research_gate }}" class="author-social" target="_blank"><i class="ai ai-researchgate-square"></i> Research Gate</a>
 
-<a href="https://hal.archives-ouvertes.fr/search/index/?q={{ site.author.hal }}" class="author-social" target="_blank"><i class="ai ai-hal-square"></i> HAL</a>
+    <a href="https://hal.archives-ouvertes.fr/search/index/?q={{ site.author.hal }}" class="author-social" target="_blank"><i class="ai ai-hal-square"></i> HAL</a>
 
-<a href="mailto:{{ site.author.email }}" class="author-social" target="_blank"><i class="fa fa-envelope-square"></i> e-Mail</a>
+    <a href="mailto:{{ site.author.email }}" class="author-social" target="_blank"><i class="fa fa-envelope-square"></i> e-Mail</a>
+</div>
