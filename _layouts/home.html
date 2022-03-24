@@ -83,6 +83,7 @@
     {% if new.series %}&nbsp;&nbsp;&nbsp;&nbsp;series={% raw %}{{% endraw %}{{ new.series }}{% raw %}}{% endraw %},<br>{% endif %}
     {% if new.volume %}&nbsp;&nbsp;&nbsp;&nbsp;volume={% raw %}{{% endraw %}{{ new.volume }}{% raw %}}{% endraw %},<br>{% endif %}
     {% if new.doi %}&nbsp;&nbsp;&nbsp;&nbsp;doi={% raw %}{{% endraw %}{{ new.doi }}{% raw %}}{% endraw %},<br/>{% endif %}
+    {% if new.url %}&nbsp;&nbsp;&nbsp;&nbsp;url={% raw %}{{% endraw %}{{ new.url }}{% raw %}}{% endraw %},<br/>{% endif %}
     }
 </div>
     </div>
@@ -92,6 +93,7 @@
             </div>
     {% endif %}
             </li>
+            <br/>
             {% endfor %}
                 </ul>
     </article>

@@ -1,3 +1,17 @@
+-   title: Under review - Handwritten Document Recognition
+    paper_title: "DAN: a Segmentation-free Document Attention Network for Handwritten Document Recognition"
+    authors: [DenisCoquenet, ClementChatelain, ThierryPaquet]
+    keyname: publisher
+    name: Arxiv
+    url: https://arxiv.org/abs/2203.12273
+    bibat: misc
+    year: 2022
+    paper_link: https://arxiv.org/abs/2203.12273
+    demo_link: https://www.youtube.com/watch?v=HrrUsQfW66E
+    code_link: https://github.com/FactoDeepLearning/DAN
+    doi: 10.48550/ARXIV.2203.12273
+    bibkey: Coquenet2022b
+    video: https://www.youtube.com/embed/HrrUsQfW66E
 -   title: Accepted paper in IEEE TPAMI
     paper_title: End-to-end Handwritten Paragraph Text Recognition Using a Vertical Attention Network
     authors: [DenisCoquenet, ClementChatelain, ThierryPaquet]
