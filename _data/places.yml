@@ -1,3 +1,6 @@
 INSARouen:
     name: INSA de Rouen
     url: https://www.insa-rouen.fr/
+UFRUnivRouen:
+    name: "UFR Sciences et Techniques, Université de Rouen"
+    url: http://sciences-techniques.univ-rouen.fr/

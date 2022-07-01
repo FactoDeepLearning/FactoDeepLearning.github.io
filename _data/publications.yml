@@ -25,7 +25,7 @@
     type: journal
 -   paper_title: 'SPAN: a Simple Predict & Align Network for Handwritten Paragraph Recognition'
     authors: [DenisCoquenet, ClementChatelain, ThierryPaquet]
-    name: International Conference on Document Analysis and Recognition, (ICDAR)
+    name: International Conference on Document Analysis and Recognition (ICDAR)
     keyname: booktitle
     bibat: inproceedings
     paper_link: https://arxiv.org/pdf/2102.08742.pdf

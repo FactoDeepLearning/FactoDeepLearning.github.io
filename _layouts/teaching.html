@@ -19,7 +19,16 @@
                 {% for event in site.data.teaching %}
                 <li>
                 {% assign place = event.place %}
-                {{ event.year }}: {{ event.name }} - <a href="{{ site.data.places[place].url }}" target="_blank">{{ site.data.places[place].name }}</a>
+                {{ event.year }}: {{ event.name }} -
+                    {% if place.first %}
+                        {% assign limit = place.size | minus: 1%}
+                        {% for i in (0..place.size) %}
+                            {% assign place_item = place[i] %}
+                            <a href="{{ site.data.places[place_item].url }}" target="_blank">{{ site.data.places[place_item].name }}</a>{% if i < limit %}, {% endif %}
+                        {% endfor %}
+                    {% else %}
+                        <a href="{{ site.data.places[place].url }}" target="_blank">{{ site.data.places[place].name }}</a>
+                    {% endif %}
                     <ul>
                         {% for class in event.classes %}
                         <li>
